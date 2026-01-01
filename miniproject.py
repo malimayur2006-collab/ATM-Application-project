@@ -1,0 +1,51 @@
+
+
+pin =1212
+attemtps =3
+balance =1000
+while attemtps >0: # To check Attempts
+    userPin= int(input("Enter your Pin: "))
+
+
+    if userPin ==pin:
+        print("Welcome  to mayur ATM APP")
+        while True: 
+            print("ATM MENU..")
+            print("1. Deposite")
+            print("2. Withdraw")
+            print("3. Check Balance")
+            print("4.Exit")
+
+
+            
+            choice =int(input("Enter your choice:"))
+            if choice ==1:
+                deposit =int(input("Enter amount to deposit: "))
+                if deposit>0:
+                    balance +=deposit
+                    print("Amount deposit Successfully , new balance is: ", balance)
+                else:
+                    print("Invalid amount") 
+            elif choice==2:
+                withdraw=int(input("Enter amount to withdraw: "))
+                if withdraw >0 :
+                   if withdraw<=balance:
+                      balance -=withdraw
+                      print("Amount deposit Successfully , new balance is: ", balance)
+                   else:
+                        print("Insufficient balance")  
+                else:
+                    print("Inalid Amount")
+            elif choice ==3:
+                print("Your current balance is: ",balance) 
+            elif choice==4:
+                 print("Thank you for using mayur python ATM APP") 
+                 break
+            else:
+                print("Invalid choice")  
+        break                        
+    else:
+         attemtps-=1
+         print("Incorrect pin . You have " ,attemtps,"attempts left.")  
+         if attemtps==0:
+             print("Your account is locked .Please contact the bank.")          
